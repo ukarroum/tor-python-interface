@@ -14,10 +14,9 @@
                         l'ip mais le nombre des noeuds de sorties est trés grand donc celà change généralement votre ip)
         - get_ip   : Récupere votre ip.
 
-    Le script nécéssite plusieurs dépendances : Beautiful Soup, Stem, PYCurl et tor.
-    Ils peuvent etre installés via ces 4 commandes (sous debian et dérivés) :
+    Le script nécéssite plusieurs dépendances : Stem, PYCurl et tor.
+    Ils peuvent etre installés via ces 3 commandes (sous debian et dérivés) :
 
-    # apt-get install python3-bs4
     # pip3 install stem
     # apt-get install python3-pycurl
     # apt-get install tor
@@ -29,7 +28,7 @@ import stem.process
 from stem.util import term
 import pycurl
 import io
-from bs4 import BeautifulSoup
+import re
 
 SOCKS_PORT = 7000
 
@@ -92,6 +91,8 @@ def new_identity():
 
 def get_ip():
 
-    soup = BeautifulSoup(get_html("http://whatismyipaddress.com/"), "html.parser")
+    html = get_html("https://check.torproject.org/")
+    pattern = re.compile("[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}")
+    return pattern.search(str(html)).group(0)
 
-    return soup.find(id="section_left").find_all('div')[1].a.string
+print(get_ip())
