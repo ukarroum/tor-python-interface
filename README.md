@@ -24,3 +24,13 @@ Un petit script qui permet de facilement utiliser tor avec python.
 * **new_identity** : Permet de modifier votre adresse ip (en fait le changement de circuit ne change pas foércément
                         l'ip mais le nombre des noeuds de sorties est trés grand donc celà change généralement votre ip)
 * **get_ip**   : Récupere votre ip.
+
+# Exemple d'utilisation : Visiter une page en passant par Tor
+
+``` 
+from tor_python_interface import *
+ 
+#Creation d'une identité via tor
+new_identity()
+print(get_html("http://example.com/"))
+```
