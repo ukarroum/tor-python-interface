@@ -35,15 +35,31 @@ SOCKS_PORT = 7000
 tor_process = 0
 use_tor = False   # Si tor est utilisé le parametre devient true
 
+#En choisissant de passer par les relais d'un meme pays
+#Les résultats deviennent plus cogérents entre eux.
+
+use_contry_code = False
+country_code = "fr"  # Un choix arbitraire qui est du à un nombre plutot elevé des relais francais.
+
+
 
 def init_tor():
 
     global tor_process
-    tor_process = stem.process.launch_tor_with_config(
-        config={
-            'SocksPort': str(SOCKS_PORT)
-        }
-    )
+
+    if use_contry_code:
+        tor_process = stem.process.launch_tor_with_config(
+            config={
+                'SocksPort': str(SOCKS_PORT),
+                'ExitNodes': '{' + country_code + '}'
+            }
+        )
+    else:
+        tor_process = stem.process.launch_tor_with_config(
+            config={
+                'SocksPort': str(SOCKS_PORT)
+            }
+        )
 
     global use_tor
     use_tor = True
