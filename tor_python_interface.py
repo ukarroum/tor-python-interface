@@ -85,7 +85,7 @@ def get_html(url):
         query.setopt(pycurl.PROXYPORT, SOCKS_PORT)
         query.setopt(pycurl.PROXYTYPE, pycurl.PROXYTYPE_SOCKS5_HOSTNAME)
 
-    query.setopt(pycurl.USERAGENT, 'Mozilla/5.0')
+    query.setopt(pycurl.USERAGENT, 'Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0')
     query.setopt(pycurl.WRITEFUNCTION, output.write)
 
     try:
