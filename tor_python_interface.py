@@ -35,12 +35,11 @@ SOCKS_PORT = 7000
 tor_process = 0
 use_tor = False   # Si tor est utilisé le parametre devient true
 
-#En choisissant de passer par les relais d'un meme pays
-#Les résultats deviennent plus cogérents entre eux.
+# En choisissant de passer par les relais d'un meme pays
+# Les résultats deviennent plus cogérents entre eux.
 
 use_contry_code = False
 country_code = "fr"  # Un choix arbitraire qui est du à un nombre plutot elevé des relais francais.
-
 
 
 def init_tor():
@@ -110,5 +109,3 @@ def get_ip():
     html = get_html("https://check.torproject.org/")
     pattern = re.compile("[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}")
     return pattern.search(str(html)).group(0)
-
-print(get_ip())
