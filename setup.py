@@ -1,8 +1,8 @@
 from distutils.core import setup
 setup(
   name = 'torPythonInt',
-  version = '1.0',
-  packages = 'torPythonInt',
+  version = '1.1',
+  packages = ['torPythonInt'],
   description = 'An easy interface to use tor with python',
   author = 'Yassir Karroum',
   author_email = 'ukarroum17@gmail.com',
