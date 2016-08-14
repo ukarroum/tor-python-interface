@@ -7,7 +7,7 @@ setup(
   author = 'Yassir Karroum',
   author_email = 'ukarroum17@gmail.com',
   url = 'https://github.com/ukarroum/tor-python-interface',
-  download_url = 'https://github.com/ukarroum/tor-python-interface/tarball/1.0',
+  download_url = 'https://github.com/ukarroum/tor-python-interface/tarball/1.2',
   keywords = ['tor', 'interface'],
   classifiers = [], install_requires=['stem']
 )
