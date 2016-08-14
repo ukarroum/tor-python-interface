@@ -15,6 +15,12 @@ Un petit script qui permet de facilement utiliser tor avec python.
 # apt-get install tor
 ```
 
+# Instalation
+
+``` 
+# pip3 install torPythonInt
+```
+
 # Fonctions
 
 
@@ -28,7 +34,7 @@ Un petit script qui permet de facilement utiliser tor avec python.
 # Exemple d'utilisation : Visiter une page en passant par Tor
 
 ``` 
-from tor_python_interface import *
+from torPythonInt import *
  
 #Creation d'une identité via tor
 new_identity()
