@@ -1,6 +1,6 @@
 from distutils.core import setup
 setup(
-  name = 'torPythonInterface',
+  name = 'torPythonInt',
   version = '1.0',
   description = 'An easy interface to use tor with python',
   author = 'Yassir Karroum',
@@ -8,5 +8,5 @@ setup(
   url = 'https://github.com/ukarroum/tor-python-interface',
   download_url = 'https://github.com/ukarroum/tor-python-interface/tarball/1.0',
   keywords = ['tor', 'interface'],
-  classifiers = [], requires=['stem']
+  classifiers = []
 )
